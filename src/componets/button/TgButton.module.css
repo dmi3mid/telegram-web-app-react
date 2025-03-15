@@ -1,7 +1,5 @@
 .button {
-    /* all: unset; */
-    border: none;
-    outline: none;
+    all: unset;
     cursor: pointer;
     display: inline-block;
     background: var(--tg-theme-button-color);
