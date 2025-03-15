@@ -1,24 +1,24 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import TgButton from './componets/button/TgButton';
 
-import './App.css';
+import useTelegram from './hooks/useTelegram';
 
-const tg = window.Telegram.WebApp;
+import './App.css';
 
 
 function App() {
+
+  const {onClose, tg, user} = useTelegram()
+
   useEffect(() => {
     tg.ready();
   }, []);
 
-  const onClose = () => {
-    tg.close();
-  }
   return (
     <div className="App">
       <p>
-        {tg.initDataUnsafe?.user?.username}
+        {user?.username}
       </p>
       <TgButton onClick={onClose}>Close</TgButton>
     </div>
