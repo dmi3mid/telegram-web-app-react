@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 
 import TgButton from './componets/button/TgButton';
 import TgInput from './componets/input/TgInput';
+import OrderForm from './componets/OrderFrom/OrderForm';
 
 import useTelegram from './hooks/useTelegram';
 
@@ -18,11 +19,7 @@ function App() {
 
   return (
     <div className="App">
-      <p>
-        {user?.username}
-      </p>
-      <TgButton onClick={onClose}>Close</TgButton>
-      <TgInput type='text' placeholder='Enter...'/>
+      <OrderForm/>
     </div>
   );
 }

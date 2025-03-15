@@ -1,0 +1,6 @@
+.OrderForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 28px auto;
+}
