@@ -13,11 +13,13 @@ function App() {
   }, []);
 
   const onClose = () => {
-    console.log(tg.initDataUnsafe);
     tg.close();
   }
   return (
     <div className="App">
+      <p>
+        {tg.initDataUnsafe?.user?.username}
+      </p>
       <TgButton onClick={onClose}>Close</TgButton>
     </div>
   );
