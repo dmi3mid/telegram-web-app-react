@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 
 import TgButton from './componets/button/TgButton';
+import TgInput from './componets/input/TgInput';
 
 import useTelegram from './hooks/useTelegram';
 
@@ -21,6 +22,7 @@ function App() {
         {user?.username}
       </p>
       <TgButton onClick={onClose}>Close</TgButton>
+      <TgInput type='text' placeholder='Enter...'/>
     </div>
   );
 }

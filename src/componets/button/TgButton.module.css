@@ -1,7 +1,7 @@
-.button {
+.TgButton {
     all: unset;
     cursor: pointer;
-    display: inline-block;
+    display: block;
     background: var(--tg-theme-button-color);
     color: var(--tg-theme-text-color);
     padding: 11px;
