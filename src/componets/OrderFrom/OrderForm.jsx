@@ -7,7 +7,7 @@ import TgInput from '../input/TgInput';
 import classes from './OrderForm.module.css';
 
 export default function OrderForm() {
-  const {tg, WebAppMainButton} = useTelegram();
+  const {WebAppMainButton} = useTelegram();
 
   const [city, setCity] = useState('');
   const [street, setStreet] = useState('');
