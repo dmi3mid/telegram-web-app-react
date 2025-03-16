@@ -1,24 +1,21 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import useTelegram from '../../hooks/useTelegram';
 
-import TgButton from '../button/TgButton';
 import TgInput from '../input/TgInput';
 
 import classes from './OrderForm.module.css';
 
 export default function OrderForm() {
-  const {WebAppMainButton} = useTelegram();
+  const {tg, WebAppMainButton} = useTelegram();
 
   const [city, setCity] = useState('');
   const [street, setStreet] = useState('');
-  
   const onCityChange = (ev) => {
     setCity(ev.target.value);
   }
   const onStreetChange = (ev) => {
     setStreet(ev.target.value);
   }
-
 
   useEffect(() => {
     WebAppMainButton.setParams({
@@ -28,7 +25,21 @@ export default function OrderForm() {
   useEffect(() => {
     if (!city || !street) WebAppMainButton.hide();
     else WebAppMainButton.show();
-  }, [city, street, WebAppMainButton])
+  }, [city, street, WebAppMainButton]);
+
+  const onSendData = useCallback(() => {
+    const data = {
+      city,
+      street,
+    }
+    tg.onSendData(JSON.stringify(data));
+  }, [city, street]);
+  useEffect(() => {
+    tg.onEvent('mainButtonClicked', onSendData);
+    return () => {
+      tg.offEvent('mainButtonClicked', onSendData);
+    }
+  })
 
   return (
     <form className={classes.OrderForm}>
