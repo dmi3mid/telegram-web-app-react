@@ -28,20 +28,31 @@ export default function OrderForm() {
     else WebAppMainButton.show();
   }, [city, street, WebAppMainButton]);
 
-  const onSendData = useCallback(() => {
-    const data = {
-      city,
-      street,
-    }
-    tg.sendData(data);
-  }, [city, street, tg]);
+  // const onSendData = useCallback(() => {
+  //   const data = {
+  //     city,
+  //     street,
+  //   }
+  //   tg.sendData(data);
+  // }, [city, street, tg]);
 
-  useEffect(() => {
-    tg.onEvent('mainButtonClicked', onSendData);
+  // useEffect(() => {
+  //   tg.onEvent('mainButtonClicked', onSendData);
+  //   return () => {
+  //     tg.offEvent('mainButtonClicked', onSendData);
+  //   }
+  // }, [tg, onSendData]);
+
+  useEffect(() => {    
+    const handleClick = () => {
+        tg.sendData(JSON.stringify({ city, street }));
+    };
+ 
+    tg.onEvent('mainButtonClicked', handleClick);
     return () => {
-      tg.offEvent('mainButtonClicked', onSendData);
-    }
-  }, [tg, onSendData]);
+        tg.offEvent('mainButtonClicked', handleClick);
+    };
+  }, [tg, city, street]);
 
   return (
     <form className={classes.OrderForm}>
