@@ -34,7 +34,6 @@ export default function OrderForm() {
     <form className={classes.OrderForm}>
         <TgInput type='text' placeholder='Enter city' value={city} onChange={onCityChange}/>
         <TgInput tyoe='text' placeholder='Enter street' value={street} onChange={onStreetChange}/>
-        <TgButton>Send order data</TgButton>
     </form>
   )
 }
