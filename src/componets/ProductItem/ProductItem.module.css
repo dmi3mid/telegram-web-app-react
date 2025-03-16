@@ -5,7 +5,7 @@
     width: calc(25% - 20px); /* 4 елементи в ряд для великих екранів */
     min-width: 250px;
     background: var(--tg-theme-bg-color);
-    padding: 15px;
+    padding: 15px 10px;
     border: 2px var(--tg-theme-text-color) solid;
     border-radius: 10px;
     text-align: center;
@@ -28,12 +28,14 @@
 }
 
 .productItem img {
+    margin: 5px 0;
     max-width: 100%;
     height: auto;
     border-radius: 5px;
 }
 
 .productTitle {
+    margin: 5px 0;
     color: var(--tg-theme-text-color);
     font-family: 'Inter', sans-serif;
     font-size: 16px;
@@ -41,6 +43,7 @@
 }
 
 .productDescription {
+    margin: 5px 0;
     color: var(--tg-theme-text-color);
     font-family: 'Inter', sans-serif;
     font-size: 16px;
