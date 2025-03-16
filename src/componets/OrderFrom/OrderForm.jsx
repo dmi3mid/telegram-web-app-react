@@ -19,15 +19,17 @@ export default function OrderForm() {
     setStreet(ev.target.value);
   }
 
-  useEffect(() => {
-    tg.MainButton.setParams({
-      text: 'Send order data'
-    });
-  });
-  useEffect(() => {
-    if (!city && !street) tg.MainButton.hide();
-    else tg.MainButton.show();
-  }, [city, street])
+  tg.BottomButton.show();
+
+  // useEffect(() => {
+  //   tg.MainButton.setParams({
+  //     text: 'Send order data'
+  //   });
+  // });
+  // useEffect(() => {
+  //   if (!city && !street) tg.MainButton.hide();
+  //   else tg.MainButton.show();
+  // }, [city, street])
 
   return (
     <form className={classes.OrderForm}>
