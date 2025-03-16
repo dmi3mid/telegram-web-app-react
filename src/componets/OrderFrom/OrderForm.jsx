@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import useTelegram from '../../hooks/useTelegram';
 
 import TgButton from '../button/TgButton';
@@ -19,17 +19,16 @@ export default function OrderForm() {
     setStreet(ev.target.value);
   }
 
-  tg.MainButton.show();
 
   // useEffect(() => {
   //   tg.MainButton.setParams({
   //     text: 'Send order data'
   //   });
   // });
-  // useEffect(() => {
-  //   if (!city && !street) tg.MainButton.hide();
-  //   else tg.MainButton.show();
-  // }, [city, street])
+  useEffect(() => {
+    if (!city || !street) tg.MainButton.hide();
+    else tg.MainButton.show();
+  }, [city, street])
 
   return (
     <form className={classes.OrderForm}>
