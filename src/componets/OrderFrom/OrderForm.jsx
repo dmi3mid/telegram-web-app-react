@@ -33,13 +33,13 @@ export default function OrderForm() {
       street,
     }
     tg.sendData(JSON.stringify(data));
-  }, [city, street]);
+  }, [city, street, tg]);
   useEffect(() => {
     tg.onEvent('mainButtonClicked', onSendData);
     return () => {
       tg.offEvent('mainButtonClicked', onSendData);
     }
-  }, [])
+  }, [tg, onSendData])
 
   return (
     <form className={classes.OrderForm}>
