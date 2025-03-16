@@ -20,13 +20,13 @@ export default function OrderForm() {
   }
 
   useEffect(() => {
-    tg.BottomButton.setParams({
+    tg.MainButton.setParams({
       text: 'Send order data'
-    }, []);
+    });
   });
   useEffect(() => {
-    if (!city && !street) tg.BottomButton.hide();
-    else tg.BottomButton.show();
+    if (!city && !street) tg.MainButton.hide();
+    else tg.MainButton.show();
   }, [city, street])
 
   return (
