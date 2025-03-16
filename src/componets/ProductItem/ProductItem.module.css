@@ -9,7 +9,7 @@
     border: 2px var(--tg-theme-text-color) solid;
     border-radius: 10px;
     text-align: center;
-    margin: 23px 11px;
+    margin: 23px;
 }
 @media (max-width: 1024px) {
     .productItem {
