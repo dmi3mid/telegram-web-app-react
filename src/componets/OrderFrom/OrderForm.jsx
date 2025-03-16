@@ -22,6 +22,7 @@ export default function OrderForm() {
       text: 'Send order data'
     });
   }, [WebAppMainButton]);
+
   useEffect(() => {
     if (!city || !street) WebAppMainButton.hide();
     else WebAppMainButton.show();
@@ -34,12 +35,13 @@ export default function OrderForm() {
     }
     tg.sendData(JSON.stringify(data));
   }, [city, street, tg]);
+
   useEffect(() => {
     tg.onEvent('mainButtonClicked', onSendData);
     return () => {
       tg.offEvent('mainButtonClicked', onSendData);
     }
-  }, [tg, onSendData])
+  }, [tg])
 
   return (
     <form className={classes.OrderForm}>
