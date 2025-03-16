@@ -2,8 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: calc(25% - 20px); /* 4 елементи в ряд для великих екранів */
-    min-width: 250px;
+    width: 90%; /* 4 елементи в ряд для великих екранів */
     background: var(--tg-theme-bg-color);
     padding: 15px;
     border: 2px var(--tg-theme-text-color) solid;
@@ -11,21 +10,7 @@
     text-align: center;
     margin: 23px;
 }
-@media (max-width: 1024px) {
-    .productItem {
-        width: calc(33.33% - 20px); /* 3 елементи в ряд на середніх екранах */
-    }
-}
-@media (max-width: 768px) {
-    .productItem {
-        width: calc(50% - 20px); /* 2 елементи в ряд для планшетів */
-    }
-}
-@media (max-width: 480px) {
-    .productItem {
-        width: 100%; /* 1 елемент в ряд для мобільних пристроїв */
-    }
-}
+
 
 .productItem img {
     margin: 11px 0;
