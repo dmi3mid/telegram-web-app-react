@@ -8,7 +8,6 @@ import useTelegram from './hooks/useTelegram';
 
 import './App.css';
 
-
 function App() {
 
   const {tg} = useTelegram()
