@@ -10,7 +10,7 @@ import useTelegram from './hooks/useTelegram';
 import './App.css';
 
 function App() {
-  const [products, setProducts] = useState([
+  const [products] = useState([
     {id: uniqid('pr-'), title: 'Node', description: 'Brief description of the product', price: 500},
     {id: uniqid('pr-'), title: 'Express', description: 'Brief description of the product', price: 450},
     {id: uniqid('pr-'), title: 'React', description: 'Brief description of the product', price: 470},

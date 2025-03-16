@@ -9,11 +9,9 @@ export default function ProductList({products}) {
     <div className={classes.productList}>
         {products.map((product, index) => {
           <ProductItem 
-            id={product.id}
+            key={product.id}
             number={index+1}
-            title={product.title}
-            description={product.description}
-            price={product.price}
+            product={product}
           />
         })}
     </div>

@@ -4,13 +4,13 @@ import TgButton from '../button/TgButton';
 
 import classes from './ProductItem.module.css';
 
-export default function ProductItem({number, title, description, price}) {
+export default function ProductItem({number, product}) {
   return (
     <div className={classes.productItem}>
-      <h3 className={classes.productTitle}>{number}. {title}</h3>
+      <h3 className={classes.productTitle}>{number}. {product.title}</h3>
       <img src="" alt="" />
-      <div className={classes.productDescription}>{description}</div>
-      <TgButton>Add {price}</TgButton>
+      <div className={classes.productDescription}>{product.description}</div>
+      <TgButton>Add {product.price}$</TgButton>
     </div>
   )
 }
