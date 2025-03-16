@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 
 import OrderForm from './componets/OrderFrom/OrderForm';
+import ProductList from './componets/ProductList/ProductList';
 
 import useTelegram from './hooks/useTelegram';
 
@@ -17,7 +19,10 @@ function App() {
 
   return (
     <div className="App">
-      <OrderForm/>
+      <Routes>
+        <Route index element = {<ProductList/>}/>
+        <Route path='form' element = {<OrderForm/>}/>
+      </Routes>
     </div>
   );
 }
