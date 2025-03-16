@@ -49,7 +49,7 @@ export default function OrderForm() {
     return () => {
       tg.offEvent('mainButtonClicked', onSendData);
     }
-  }, [tg, onSendData]);
+  }, [tg]);
 
   return (
     <form className={classes.OrderForm}>
