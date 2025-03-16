@@ -19,7 +19,7 @@ export default function OrderForm() {
     setStreet(ev.target.value);
   }
 
-  tg.BottomButton.show();
+  tg.MainButton.show();
 
   // useEffect(() => {
   //   tg.MainButton.setParams({
