@@ -1,0 +1,46 @@
+.productItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(25% - 20px); /* 4 елементи в ряд для великих екранів */
+    min-width: 250px;
+    background: var(--tg-theme-bg-color);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+@media (max-width: 1024px) {
+    .productItem {
+        width: calc(33.33% - 20px); /* 3 елементи в ряд на середніх екранах */
+    }
+}
+@media (max-width: 768px) {
+    .productItem {
+        width: calc(50% - 20px); /* 2 елементи в ряд для планшетів */
+    }
+}
+@media (max-width: 480px) {
+    .productItem {
+        width: 100%; /* 1 елемент в ряд для мобільних пристроїв */
+    }
+}
+
+.productItem img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.productTitle {
+    color: var(--tg-theme-text-color);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.productDescription {
+    color: var(--tg-theme-text-color);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}

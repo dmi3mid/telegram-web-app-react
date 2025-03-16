@@ -1,11 +1,21 @@
 import React from 'react';
 
+import ProductItem from '../ProductItem/ProductItem';
+
 import classes from './ProductList.module.css';
 
-export default function ProductList() {
+export default function ProductList({products}) {
   return (
-    <div className={classes.ProductList}>
-        ProductList
+    <div className={classes.productList}>
+        {products.map((product, index) => {
+          <ProductItem 
+            id={product.id}
+            number={index+1}
+            title={product.title}
+            description={product.description}
+            price={product.price}
+          />
+        })}
     </div>
   )
 }
