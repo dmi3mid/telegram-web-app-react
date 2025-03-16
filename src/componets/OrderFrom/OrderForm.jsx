@@ -28,13 +28,21 @@ export default function OrderForm() {
     else WebAppMainButton.show();
   }, [city, street, WebAppMainButton]);
 
-  const onSendData = useCallback(() => {
+  // const onSendData = useCallback(() => {
+  //   const data = {
+  //     city,
+  //     street,
+  //   }
+  //   tg.sendData(JSON.stringify(data));
+  // }, [city, street, tg]);
+
+  const onSendData = () => {
     const data = {
       city,
       street,
     }
     tg.sendData(JSON.stringify(data));
-  }, [city, street, tg]);
+  }
 
   useEffect(() => {
     tg.onEvent('mainButtonClicked', onSendData);
