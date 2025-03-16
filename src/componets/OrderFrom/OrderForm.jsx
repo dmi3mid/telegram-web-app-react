@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import useTelegram from '../../hooks/useTelegram';
 
 import TgInput from '../input/TgInput';
@@ -28,28 +28,20 @@ export default function OrderForm() {
     else WebAppMainButton.show();
   }, [city, street, WebAppMainButton]);
 
-  // const onSendData = useCallback(() => {
-  //   const data = {
-  //     city,
-  //     street,
-  //   }
-  //   tg.sendData(JSON.stringify(data));
-  // }, [city, street, tg]);
-
-  const onSendData = () => {
+  const onSendData = useCallback(() => {
     const data = {
       city,
       street,
     }
-    tg.sendData(JSON.stringify(data));
-  }
+    tg.sendData(data);
+  }, [city, street, tg]);
 
   useEffect(() => {
     tg.onEvent('mainButtonClicked', onSendData);
     return () => {
       tg.offEvent('mainButtonClicked', onSendData);
     }
-  }, [tg]);
+  }, [tg, onSendData]);
 
   return (
     <form className={classes.OrderForm}>
