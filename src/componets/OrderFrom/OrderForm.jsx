@@ -28,7 +28,7 @@ export default function OrderForm() {
   useEffect(() => {
     if (!city || !street) tg.MainButton.hide();
     else tg.MainButton.show();
-  }, [city, street])
+  }, [city, street, tg.MainButton])
 
   return (
     <form className={classes.OrderForm}>
