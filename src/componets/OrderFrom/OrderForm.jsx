@@ -22,7 +22,7 @@ export default function OrderForm() {
   useEffect(() => {
     tg.BottomButton.setParams({
       text: 'Send order data'
-    });
+    }, []);
   });
   useEffect(() => {
     if (!city && !street) tg.BottomButton.hide();
