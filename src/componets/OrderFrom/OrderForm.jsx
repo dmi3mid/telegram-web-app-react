@@ -7,7 +7,7 @@ import TgInput from '../input/TgInput';
 import classes from './OrderForm.module.css';
 
 export default function OrderForm() {
-  const {tg} = useTelegram();
+  const {tg, WebAppMainButton} = useTelegram();
 
   const [city, setCity] = useState('');
   const [street, setStreet] = useState('');
@@ -20,15 +20,15 @@ export default function OrderForm() {
   }
 
 
-  // useEffect(() => {
-  //   tg.MainButton.setParams({
-  //     text: 'Send order data'
-  //   });
-  // });
   useEffect(() => {
-    if (!city || !street) tg.MainButton.hide();
-    else tg.MainButton.show();
-  }, [city, street, tg.MainButton])
+    WebAppMainButton.setParams({
+      text: 'Send order data'
+    });
+  }, [WebAppMainButton]);
+  useEffect(() => {
+    if (!city || !street) WebAppMainButton.hide();
+    else WebAppMainButton.show();
+  }, [city, street, WebAppMainButton])
 
   return (
     <form className={classes.OrderForm}>
