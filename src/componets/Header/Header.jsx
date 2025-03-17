@@ -11,7 +11,10 @@ export default function Header() {
             <h1 className={classes.headerTitle}>
                 {user?.username}
             </h1>
-            <p><span class={["material-symbols-outlined", classes.headerShoppinfCart].join(' ')}>shopping_cart_checkout</span></p>
+            <h2 className={classes.headerShoppinfCart}>
+                <span class="material-symbols-outlined">shopping_cart_checkout</span>
+                Counter
+            </h2>
         </div>
     )
 }
