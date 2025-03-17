@@ -4,6 +4,7 @@ import uniqid from 'uniqid';
 
 import OrderForm from './componets/OrderFrom/OrderForm';
 import ProductList from './componets/ProductList/ProductList';
+import Header from './componets/Header/Header';
 
 import useTelegram from './hooks/useTelegram';
 
@@ -31,7 +32,12 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route index element = {<ProductList products={products}/>}/>
+        <Route index element = {
+          <div>
+            <Header/>
+            <ProductList products={products}/>
+          </div>
+         }/>
         <Route path='form' element = {<OrderForm/>}/>
       </Routes>
     </div>
