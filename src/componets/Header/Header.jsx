@@ -6,6 +6,7 @@ import classes from './Header.module.css';
 
 export default function Header() {
     const {user} = useTelegram();
+    console.log(user);
     return (
         <div className={classes.header}>
             <h1 className={classes.headerTitle}>

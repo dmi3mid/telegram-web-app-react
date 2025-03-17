@@ -23,7 +23,7 @@ function App() {
   ])
 
 
-  const {tg} = useTelegram()
+  const {tg} = useTelegram();
 
   useEffect(() => {
     tg.ready();
