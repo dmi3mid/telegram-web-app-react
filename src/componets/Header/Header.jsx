@@ -11,10 +11,10 @@ export default function Header() {
             <h1 className={classes.headerTitle}>
                 {user?.username}
             </h1>
-            <h2 className={classes.headerShoppinfCart}>
+            <p className={classes.headerShoppingCart}>
                 <span class="material-symbols-outlined">shopping_cart_checkout</span>
                 Counter
-            </h2>
+            </p>
         </div>
     )
 }
