@@ -9,7 +9,7 @@
     flex-direction: row;
     justify-content: center;
     background: var(--tg-theme-bg-color);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 .headerTitle {
     margin: 28px 11px;
@@ -19,7 +19,7 @@
     font-weight: 400;
 }
 .headerShoppingCart {
-    margin: 28px 11px;
+    margin: 0 11px;
     color: var(--tg-theme-text-color);
-    font-size: 28px;
+    font-size: 38px;
 }
