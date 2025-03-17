@@ -1,5 +1,5 @@
 .header {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
@@ -19,7 +19,7 @@
     font-weight: 400;
 }
 .headerShoppingCart {
-    margin: 0 11px;
+    margin: 28px 11px;
     color: var(--tg-theme-text-color);
     font-size: 38px;
 }
