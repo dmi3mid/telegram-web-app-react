@@ -1,0 +1,12 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: var(--tg-theme-bg-color);
+}
+.headerTitle {
+    color: var(--tg-theme-text-color);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
