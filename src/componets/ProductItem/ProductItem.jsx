@@ -10,8 +10,10 @@ export default function ProductItem({number, product}) {
       <h3 className={classes.productTitle}>{number}. {product.title}</h3>
       <img src="" alt="" />
       <div className={classes.productDescription}>{product.description}</div>
-      <TgButton>Add {product.price}$</TgButton>
-      <TgButton>Remove</TgButton>
+      <div className={classes.productBtnsBlock}>
+        <TgButton>Add {product.price}$</TgButton>
+        <TgButton>Remove</TgButton>
+      </div>
     </div>
   )
 }
