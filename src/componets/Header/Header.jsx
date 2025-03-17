@@ -5,7 +5,7 @@ import useTelegram from '../../hooks/useTelegram';
 import classes from './Header.module.css';
 
 export default function Header() {
-    const {user} = useTelegram();
+    // const {user} = useTelegram();
     return (
         <div className={classes.header}>
             <h1 className={classes.headerTitle}>
