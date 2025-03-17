@@ -1,6 +1,6 @@
 import React from 'react';
 
-import useTelegram from '../../hooks/useTelegram';
+// import useTelegram from '../../hooks/useTelegram';
 
 import classes from './Header.module.css';
 
