@@ -10,7 +10,7 @@ export default function Header() {
         <div className={classes.header}>
             <h1 className={classes.headerTitle}>
                 {user.username ? user.username : `User${user.id}`}&nbsp;
-                <span class="material-symbols-outlined">shopping_cart_checkout</span>
+                {/* <span class="material-symbols-outlined">shopping_cart_checkout</span> */}
             </h1>
         </div>
     )
