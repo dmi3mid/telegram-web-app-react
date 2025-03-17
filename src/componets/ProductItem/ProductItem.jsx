@@ -11,6 +11,7 @@ export default function ProductItem({number, product}) {
       <img src="" alt="" />
       <div className={classes.productDescription}>{product.description}</div>
       <TgButton>Add {product.price}$</TgButton>
+      <TgButton>Remove</TgButton>
     </div>
   )
 }
