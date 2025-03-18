@@ -30,8 +30,7 @@ export default function ProductList() {
 
   const onAddToCart = (product) => {
     let productsInCart = [];
-    const alreadyInCart = cart.find(pr => pr.id === product.id);
-    if (!alreadyInCart) productsInCart = [...cart, product];
+    productsInCart = [...cart, product];
     setCart(productsInCart);
 
     if (productsInCart.length === 0) {
