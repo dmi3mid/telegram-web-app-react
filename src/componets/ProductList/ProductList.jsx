@@ -43,15 +43,16 @@ export default function ProductList() {
       WebAppMainButton.show();
     }
   }
-  // const onRemoveFromCart = (product) => {
-  //   setCart(cart.filter(pr => pr.id !== product.id));
-  // }
+
+  const onRemoveFromCart = (product) => {
+    setCart(cart.filter(pr => pr.id !== product.id));
+  }
 
 
   return (
     <div className={classes.productList}>
       {products.map((product, index) => (
-        <ProductItem key={product.id} number={index+1} product={product} onAdd={onAddToCart}/>
+        <ProductItem key={product.id} number={index+1} product={product} onAdd={onAddToCart} onRemove={onRemoveFromCart}/>
       ))}
     </div>
   )
