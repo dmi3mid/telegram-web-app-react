@@ -4,14 +4,19 @@ import TgButton from '../button/TgButton';
 
 import classes from './ProductItem.module.css';
 
-export default function ProductItem({number, product}) {
+export default function ProductItem({number, product, onAdd}) {
+
+  const onAddToCart = () => {
+    onAdd(product)
+  }
+
   return (
     <div className={classes.productItem}>
       <h3 className={classes.productTitle}>{number}. {product.title}</h3>
       <img src="" alt="" />
       <div className={classes.productDescription}>{product.description}</div>
       <div className={classes.productBtnsBlock}>
-        <TgButton>Add {product.price}$</TgButton>
+        <TgButton onClick={onAddToCart}>Add {product.price}$</TgButton>
         <TgButton>Remove</TgButton>
       </div>
     </div>
