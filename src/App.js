@@ -32,6 +32,10 @@ function App() {
   const updateCart = (productsInCart) => {
     setCart(productsInCart);
   };
+  useEffect(() => {
+    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    setCart(storedCart);
+  }, []);
 
   return (
     <div className="App">
@@ -39,11 +43,11 @@ function App() {
         <Route index element = {
           <div>
             <Header/>
-            <ProductList products={products} updateCart={updateCart} cart={cart}/>
+            <ProductList products={products} updateCart={updateCart} cart={products}/>
           </div>
          }/>
         <Route path='form' element = {<OrderForm/>}/>
-        <Route path='cart' element = {<ProductList isCart={true} products={JSON.parse(localStorage.getItem("cart")) || []}/>}/>
+        <Route path='cart' element = {<ProductList isCart={true} products={cart}/>}/>
       </Routes>
     </div>
   );
