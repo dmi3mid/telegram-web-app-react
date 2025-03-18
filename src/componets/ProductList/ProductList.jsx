@@ -15,7 +15,7 @@ export default function ProductList({products}) {
     setCart([productsInCart, ...cart]);
     if (productsInCart.length > 0){
       WebAppMainButton.setParams({
-        text: `Total price ${cart.reduce( (total, pr) => total + pr.price)}`
+        text: `Total price ${productsInCart.reduce( (total, pr) => total + pr.price)}`
       })
       WebAppMainButton.show();
     }
