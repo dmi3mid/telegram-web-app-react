@@ -19,7 +19,7 @@ const products = [
 ];
 export default function ProductList() {
   const {WebAppMainButton} = useTelegram();
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState();
 
   const getTotalPrice = (products) => {
     return products.reduce( (acc, item) => {
