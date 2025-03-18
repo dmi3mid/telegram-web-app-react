@@ -4,14 +4,14 @@ import TgButton from '../button/TgButton';
 
 import classes from './ProductItem.module.css';
 
-export default function ProductItem({number, product, onAdd, onRemove}) {
+export default function ProductItem({number, product, onAdd}) {
 
   const onAddToCart = () => {
     onAdd(product)
   }
-  const onRemoveFromCart = () => {
-    onRemove(product)
-  }
+  // const onRemoveFromCart = () => {
+  //   onRemove(product)
+  // }
 
   return (
     <div className={classes.productItem}>
@@ -20,7 +20,7 @@ export default function ProductItem({number, product, onAdd, onRemove}) {
       <div className={classes.productDescription}>{product.description}</div>
       <div className={classes.productBtnsBlock}>
         <TgButton onClick={onAddToCart}>Add {product.price}$</TgButton>
-        <TgButton onClick={onRemoveFromCart}>Remove</TgButton>
+        <TgButton>Remove</TgButton>
       </div>
     </div>
   )

@@ -43,24 +43,24 @@ export default function ProductList() {
     }
   }
 
-  const onRemoveFromCart = (product) => {
-    let productsInCart = [...cart];
-    const alreadyRemoved = productsInCart.find(pr => pr.id === product.id)
-    if (alreadyRemoved) {
-      productsInCart = productsInCart.filter(pr => pr.id !== product.id)
-      setCart(productsInCart);
-      WebAppMainButton.setParams({
-        text: `Continue ${getTotalPrice(productsInCart)}`
-      })
-    }
-    if (productsInCart.length === 0) WebAppMainButton.hide()
-  }
+  // const onRemoveFromCart = (product) => {
+  //   let productsInCart = [...cart];
+  //   const alreadyRemoved = productsInCart.find(pr => pr.id === product.id)
+  //   if (alreadyRemoved) {
+  //     productsInCart = productsInCart.filter(pr => pr.id !== product.id)
+  //     setCart(productsInCart);
+  //     WebAppMainButton.setParams({
+  //       text: `Continue ${getTotalPrice(productsInCart)}`
+  //     })
+  //   }
+  //   if (productsInCart.length === 0) WebAppMainButton.hide()
+  // }
 
 
   return (
     <div className={classes.productList}>
       {products.map((product, index) => (
-        <ProductItem key={product.id} number={index+1} product={product} onAdd={onAddToCart} onRemove={onRemoveFromCart}/>
+        <ProductItem key={product.id} number={index+1} product={product} onAdd={onAddToCart}/>
       ))}
     </div>
   )
