@@ -30,7 +30,7 @@ export default function ProductList() {
   const onAddToCart = (product) => {
     let productsInCart = [];
     productsInCart.push(product)
-    setCart([productsInCart, ...cart]);
+    setCart(productsInCart);
     if (productsInCart.length > 0) {
       WebAppMainButton.setParams({
         text: `Continue ${getTotalPrice(cart)}`
