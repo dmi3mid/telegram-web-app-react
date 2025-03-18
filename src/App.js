@@ -28,7 +28,7 @@ function App() {
   });
 
   const [cart, setCart] = useState([]);
-  localStorage("cart", JSON.stringify(cart));
+  // localStorage("cart", JSON.stringify(cart));
   const updateCart = (productsInCart) => {
     setCart(productsInCart);
   };

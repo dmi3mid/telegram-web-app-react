@@ -18,6 +18,7 @@ export default function ProductList({products, isCart, updateCart, cart}) {
 
   const onAddToCart = (product) => {
     let productsInCart = [...cart, product];
+    localStorage("cart", JSON.stringify(productsInCart));
     updateCart(productsInCart);
     // localStorage("cart", JSON.stringify(cart));
     if (productsInCart.length === 0) {

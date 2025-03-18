@@ -19,7 +19,6 @@ export default function ProductItem({number, product, isCart, onAdd}) {
         <img src="" alt="" />
         <div className={classes.productDescription}>{product.description}</div>
         <div className={classes.productBtnsBlock}>
-          <TgButton onClick={onAddToCart}>Add {product.price}$</TgButton>
           <TgButton>Remove</TgButton>
         </div>
       </div>
