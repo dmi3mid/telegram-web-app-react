@@ -53,6 +53,7 @@ export default function ProductList() {
         text: `Continue ${getTotalPrice(productsInCart)}`
       })
     }
+    if (productsInCart.length === 0) WebAppMainButton.hide()
   }
 
 
