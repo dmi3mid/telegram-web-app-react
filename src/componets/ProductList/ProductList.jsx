@@ -17,23 +17,29 @@ const products = [
   {id: uniqid('pr-'), title: 'Vue', description: 'Brief description of the product', price: 400},
   {id: uniqid('pr-'), title: 'Nest', description: 'Brief description of the product', price: 410},
 ];
+
+const getTotalPrice = (products) => {
+  return products.reduce( (acc, item) => {
+    return acc += item.price
+  }, 0);
+}
+
 export default function ProductList() {
   const {WebAppMainButton} = useTelegram();
   const [cart, setCart] = useState([]);
 
-  const getTotalPrice = (products) => {
-    return products.reduce( (acc, item) => {
-      return acc + item.price
-    }, 0);
-  }
-
   const onAddToCart = (product) => {
     let productsInCart = [];
-    productsInCart.push(product)
-    setCart(...cart, product);
-    if (productsInCart.length > 0) {
+    const alreadyInCart = cart.find(pr => pr.id === product.id);
+    if (!alreadyInCart) productsInCart = [...cart, product];
+    setCart(productsInCart);
+
+    if (productsInCart.length === 0) {
+      WebAppMainButton.hide();
+    }
+    else {
       WebAppMainButton.setParams({
-        text: `Continue ${getTotalPrice(cart)}`
+        text: `Continue ${getTotalPrice(productsInCart)}`
       })
       WebAppMainButton.show();
     }
