@@ -25,6 +25,7 @@ function App() {
           </div>
          }/>
         <Route path='form' element = {<OrderForm/>}/>
+        {/* <Route path='cart' element = {<Cart/>}/> */}
       </Routes>
     </div>
   );

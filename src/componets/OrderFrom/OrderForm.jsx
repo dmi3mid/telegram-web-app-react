@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import useTelegram from '../../hooks/useTelegram';
 
-import TgInput from '../input/TgInput';
+import TgInput from '../UI/input/TgInput';
 
 import classes from './OrderForm.module.css';
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import TgButton from '../button/TgButton';
+import TgButton from '../UI/button/TgButton';
 
 import classes from './ProductItem.module.css';
 
