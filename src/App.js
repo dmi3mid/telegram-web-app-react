@@ -31,11 +31,13 @@ function App() {
   // localStorage("cart", JSON.stringify(cart));
   const updateCart = (productsInCart) => {
     setCart(productsInCart);
+    localStorage("cart", JSON.stringify(cart));
   };
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setCart(storedCart);
   }, []);
+  const inCart = [...cart];
 
   return (
     <div className="App">
@@ -43,11 +45,11 @@ function App() {
         <Route index element = {
           <div>
             <Header/>
-            <ProductList products={products} updateCart={updateCart} cart={products}/>
+            <ProductList products={products} updateCart={updateCart} cart={cart}/>
           </div>
          }/>
         <Route path='form' element = {<OrderForm/>}/>
-        <Route path='cart' element = {<ProductList isCart={true} products={cart}/>}/>
+        <Route path='cart' element = {<ProductList isCart={true} products={inCart}/>}/>
       </Routes>
     </div>
   );
