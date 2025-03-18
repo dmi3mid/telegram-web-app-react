@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import uniqid from 'uniqid';
 
 import useTelegram from '../../hooks/useTelegram';
 
@@ -6,16 +7,26 @@ import ProductItem from '../ProductItem/ProductItem';
 
 import classes from './ProductList.module.css';
 
-export default function ProductList({products}) {
+const products = [
+  {id: uniqid('pr-'), title: 'Node', description: 'Brief description of the product', price: 500},
+  {id: uniqid('pr-'), title: 'Express', description: 'Brief description of the product', price: 450},
+  {id: uniqid('pr-'), title: 'React', description: 'Brief description of the product', price: 470},
+  {id: uniqid('pr-'), title: 'Mongo', description: 'Brief description of the product', price: 300},
+  {id: uniqid('pr-'), title: 'Telegraf', description: 'Brief description of the product', price: 100},
+  {id: uniqid('pr-'), title: 'Next', description: 'Brief description of the product', price: 350},
+  {id: uniqid('pr-'), title: 'Vue', description: 'Brief description of the product', price: 400},
+  {id: uniqid('pr-'), title: 'Nest', description: 'Brief description of the product', price: 410},
+];
+export default function ProductList({getTotalPrice}) {
   const {WebAppMainButton} = useTelegram();
   const [cart, setCart] = useState([]);
   const onAddToCart = (product) => {
     let productsInCart = [];
     productsInCart.push(product)
     setCart([productsInCart, ...cart]);
-    if (productsInCart.length > 0){
+    if (productsInCart.length > 0) {
       WebAppMainButton.setParams({
-        text: `Total price ${productsInCart.reduce( (total, pr) => total + pr.price)}`
+        text: `Continue ${getTotalPrice(cart)}`
       })
       WebAppMainButton.show();
     }
