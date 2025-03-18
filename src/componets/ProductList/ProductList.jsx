@@ -18,7 +18,6 @@ export default function ProductList({products, isCart, updateCart, cart}) {
 
   const onAddToCart = (product) => {
     let productsInCart = [...cart, product];
-    localStorage("cart", JSON.stringify(productsInCart));
     updateCart(productsInCart);
     if (productsInCart.length === 0) {
       WebAppMainButton.hide();

@@ -28,15 +28,9 @@ function App() {
   });
 
   const [cart, setCart] = useState([]);
-  // localStorage("cart", JSON.stringify(cart));
   const updateCart = (productsInCart) => {
     setCart(productsInCart);
   };
-  useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
-    setCart(storedCart);
-  }, []);
-  const inCart = [...cart];
 
   return (
     <div className="App">
@@ -48,7 +42,7 @@ function App() {
           </div>
          }/>
         <Route path='form' element = {<OrderForm/>}/>
-        <Route path='cart' element = {<ProductList isCart={true} products={inCart}/>}/>
+        {/* <Route path='cart' element = {<ProductList isCart={true} products={inCart}/>}/> */}
       </Routes>
     </div>
   );
