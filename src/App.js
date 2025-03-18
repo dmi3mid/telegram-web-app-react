@@ -31,7 +31,6 @@ function App() {
   // localStorage("cart", JSON.stringify(cart));
   const updateCart = (productsInCart) => {
     setCart(productsInCart);
-    localStorage("cart", JSON.stringify(cart));
   };
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
