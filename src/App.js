@@ -10,12 +10,6 @@ import useTelegram from './hooks/useTelegram';
 import './App.css';
 
 function App() {
-  const getTotalPrice = (products) => {
-    return products.reduce( (acc, item) => {
-      return acc + item.price
-    }, 0);
-  }
-
   const {tg} = useTelegram()
   useEffect(() => {
     tg.ready();
@@ -27,7 +21,7 @@ function App() {
         <Route index element = {
           <div>
             <Header/>
-            <ProductList getTotalPrice={getTotalPrice}/>
+            <ProductList/>
           </div>
          }/>
         <Route path='form' element = {<OrderForm/>}/>

@@ -20,6 +20,13 @@ const products = [
 export default function ProductList({getTotalPrice}) {
   const {WebAppMainButton} = useTelegram();
   const [cart, setCart] = useState([]);
+
+  const getTotalPrice = (products) => {
+    return products.reduce( (acc, item) => {
+      return acc + item.price
+    }, 0);
+  }
+  
   const onAddToCart = (product) => {
     let productsInCart = [];
     productsInCart.push(product)
