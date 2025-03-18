@@ -42,7 +42,7 @@ function App() {
           </div>
          }/>
         <Route path='form' element = {<OrderForm/>}/>
-        <Route path='cart' element = {<ProductList isCart={true}/>}/>
+        <Route path='cart' element = {<ProductList isCart={true} products={cart}/>}/>
       </Routes>
     </div>
   );
