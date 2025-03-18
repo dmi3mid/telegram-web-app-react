@@ -15,7 +15,6 @@ const getTotalPrice = (products) => {
 
 export default function ProductList({products, isCart, updateCart, cart}) {
   const {WebAppMainButton} = useTelegram();
-  // const [cart, setCart] = useState([]);
 
   const onAddToCart = (product) => {
     let productsInCart = [...cart, product];
