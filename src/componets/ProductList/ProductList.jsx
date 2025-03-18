@@ -19,7 +19,7 @@ const products = [
 ];
 export default function ProductList() {
   const {WebAppMainButton} = useTelegram();
-  const [cart, setCart] = useState();
+  const [cart, setCart] = useState([]);
 
   const getTotalPrice = (products) => {
     return products.reduce( (acc, item) => {
@@ -30,7 +30,7 @@ export default function ProductList() {
   const onAddToCart = (product) => {
     let productsInCart = [];
     productsInCart.push(product)
-    setCart(productsInCart);
+    setCart(...cart, product);
     if (productsInCart.length > 0) {
       WebAppMainButton.setParams({
         text: `Continue ${getTotalPrice(cart)}`
