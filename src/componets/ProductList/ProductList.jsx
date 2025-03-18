@@ -38,7 +38,7 @@ export default function ProductList() {
     }
     else {
       WebAppMainButton.setParams({
-        text: `Continue ${getTotalPrice(productsInCart)}`
+        text: `Continue ${getTotalPrice(cart)}`
       })
       WebAppMainButton.show();
     }
