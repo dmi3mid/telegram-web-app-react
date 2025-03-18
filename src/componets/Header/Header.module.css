@@ -23,3 +23,14 @@
     color: var(--tg-theme-text-color);
     font-size: 28px;
 }
+
+.headerShoppingCartCounter {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--tg-theme-bg-color);
+    color: var(--tg-theme-text-color);
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}

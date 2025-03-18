@@ -13,6 +13,7 @@ export default function Header() {
             </h1>
             <p className={classes.headerShoppingCart}>
                 <span class="material-symbols-outlined">shopping_cart_checkout</span>
+                <span className={classes.headerShoppingCartCounter}>0</span>
             </p>
         </div>
     )
