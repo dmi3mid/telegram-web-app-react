@@ -1,5 +1,4 @@
-import React, {useState} from 'react';
-import uniqid from 'uniqid';
+import React from 'react';
 
 import useTelegram from '../../hooks/useTelegram';
 
