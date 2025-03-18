@@ -19,7 +19,7 @@
     font-weight: 400;
 }
 .headerShoppingCart {
-    margin: 28px 11px;
+    margin: 30px 0;
     color: var(--tg-theme-text-color);
     font-size: 28px;
 }
