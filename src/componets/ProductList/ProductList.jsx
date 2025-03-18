@@ -29,8 +29,7 @@ export default function ProductList() {
   const [cart, setCart] = useState([]);
 
   const onAddToCart = (product) => {
-    let productsInCart = [];
-    productsInCart = [...cart, product];
+    let productsInCart = [...cart, product];
     setCart(productsInCart);
 
     if (productsInCart.length === 0) {
@@ -45,7 +44,15 @@ export default function ProductList() {
   }
 
   const onRemoveFromCart = (product) => {
-    setCart(cart.filter(pr => pr.id !== product.id));
+    let productsInCart = [...cart];
+    const alreadyRemoved = productsInCart.find(pr => pr.id === product.id)
+    if (alreadyRemoved) {
+      productsInCart = productsInCart.filter(pr => pr.id !== product.id)
+      setCart(productsInCart);
+      WebAppMainButton.setParams({
+        text: `Continue ${getTotalPrice(productsInCart)}`
+      })
+    }
   }
 
 
