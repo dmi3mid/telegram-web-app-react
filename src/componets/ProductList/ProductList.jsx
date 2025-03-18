@@ -13,7 +13,12 @@ export default function ProductList({products}) {
     let productsInCart = [];
     productsInCart.push(product)
     setCart([productsInCart, ...cart]);
-    if (productsInCart.length > 0) WebAppMainButton.show();
+    if (productsInCart.length > 0){
+      WebAppMainButton.setParams({
+        text: `Total price ${cart.reduce( (total, pr) => total + pr.price)}`
+      })
+      WebAppMainButton.show();
+    }
   }
   // const onRemoveFromCart = (product) => {
   //   setCart(cart.filter(pr => pr.id !== product.id));
