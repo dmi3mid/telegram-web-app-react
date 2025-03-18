@@ -23,20 +23,3 @@
     color: var(--tg-theme-text-color);
     font-size: 28px;
 }
-
-.headerShoppingCartCounter {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: var(--tg-theme-button-color);
-    color: var(--tg-theme-text-color);
-    font-size: 12px;
-    font-weight: bold;
-    width: 18px;
-    height: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: 2px solid var(--tg-theme-text-color);
-}
