@@ -13,7 +13,7 @@ const getTotalPrice = (products) => {
   }, 0);
 }
 
-export default function ProductList({products, isCart, updateCart, cart}) {
+export default function ProductList({products, updateCart, cart}) {
   const {WebAppMainButton} = useTelegram();
 
   const onAddToCart = (product) => {
@@ -30,34 +30,10 @@ export default function ProductList({products, isCart, updateCart, cart}) {
     }
   }
 
-  // const onSendData = useCallback(() => {
-  //   tg.sendData(JSON.stringify({cart: cart}));
-  // }, [tg, cart]);
-
-  // useEffect(() => {
-  //     tg.onEvent('mainButtonClicked', onSendData);
-  //     return () => {
-  //       tg.offEvent('mainButtonClicked', onSendData);
-  //     }
-  //   }, [tg, onSendData]);
-
-  // const onRemoveFromCart = (product) => {
-  //   let productsInCart = [...cart];
-  //   const alreadyRemoved = productsInCart.find(pr => pr.id === product.id)
-  //   if (alreadyRemoved) {
-  //     productsInCart = productsInCart.filter(pr => pr.id !== product.id)
-  //     setCart(productsInCart);
-  //     WebAppMainButton.setParams({
-  //       text: `Continue ${getTotalPrice(productsInCart)}`
-  //     })
-  //   }
-  //   if (productsInCart.length === 0) WebAppMainButton.hide()
-  // }
-
   return (
     <div className={classes.productList}>
       {products.map((product, index) => (
-        <ProductItem key={product.id} number={index+1} product={product} isCart={isCart} onAdd={onAddToCart}/>
+        <ProductItem key={product.id} number={index+1} product={product} onAdd={onAddToCart}/>
       ))}
     </div>
   )

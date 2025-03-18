@@ -23,15 +23,15 @@ const products = [
 
 function App() {
   const {tg} = useTelegram()
-  useEffect(() => {
-    tg.ready();
-  });
-
+  
   const [cart, setCart] = useState([]);
   const updateCart = (productsInCart) => {
     setCart(productsInCart);
   };
 
+  useEffect(() => {
+    tg.ready();
+  });
   return (
     <div className="App">
       <Routes>
@@ -42,7 +42,6 @@ function App() {
           </div>
          }/>
         <Route path='form' element = {<OrderForm/>}/>
-        {/* <Route path='cart' element = {<ProductList isCart={true} products={inCart}/>}/> */}
       </Routes>
     </div>
   );
