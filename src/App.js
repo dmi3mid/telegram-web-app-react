@@ -28,6 +28,7 @@ function App() {
   });
 
   const [cart, setCart] = useState([]);
+  localStorage("cart", JSON.stringify(cart));
   const updateCart = (productsInCart) => {
     setCart(productsInCart);
   };
@@ -42,7 +43,7 @@ function App() {
           </div>
          }/>
         <Route path='form' element = {<OrderForm/>}/>
-        {/* <Route path='cart' element = {<ProductList isCart={true} products={cart}/>}/> */}
+        <Route path='cart' element = {<ProductList isCart={true} products={JSON.parse(localStorage.getItem("cart")) || []}/>}/>
       </Routes>
     </div>
   );
