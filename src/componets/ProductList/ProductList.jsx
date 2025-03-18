@@ -12,7 +12,7 @@ export default function ProductList({products}) {
   const onAddToCart = (product) => {
     let productsInCart = [];
     productsInCart.push(product)
-    setCart(productsInCart);
+    setCart([productsInCart, ...cart]);
     if (productsInCart.length > 0) WebAppMainButton.show();
   }
   // const onRemoveFromCart = (product) => {
