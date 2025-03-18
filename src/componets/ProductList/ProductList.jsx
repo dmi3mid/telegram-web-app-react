@@ -17,7 +17,7 @@ const products = [
   {id: uniqid('pr-'), title: 'Vue', description: 'Brief description of the product', price: 400},
   {id: uniqid('pr-'), title: 'Nest', description: 'Brief description of the product', price: 410},
 ];
-export default function ProductList({getTotalPrice}) {
+export default function ProductList() {
   const {WebAppMainButton} = useTelegram();
   const [cart, setCart] = useState([]);
 
@@ -26,7 +26,7 @@ export default function ProductList({getTotalPrice}) {
       return acc + item.price
     }, 0);
   }
-  
+
   const onAddToCart = (product) => {
     let productsInCart = [];
     productsInCart.push(product)
